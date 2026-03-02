@@ -14,16 +14,19 @@ public class ProductController {
     }
 
     @PostMapping("/products")
-    public void createProduct(Product product){
-
+    public Product createProduct(@RequestBody Product product){
+        Product p = productservice.createProduct(product.getId(), product.getTitle(), product.getDescription(), product.getPrice(),product.getImageUrl(), product.getCategory().getTitle());
+        return p;
     }
     @GetMapping("/products/{id}")
-    public String getProduct(Long id){
-        productservice.getSingleProduct(id);
-        return null;
+    public Product getProduct(@PathVariable("id") Long id){
+        Product p = productservice.getSingleProduct(id);
+        return p;
     }
+
     @PutMapping("/products")
-    public void updateProduct(Product product){
+    public void updateProduct(@RequestBody Product product){
+        productservice.updateProduct(product.getId(), product.getTitle(), product.getDescription(), product.getPrice(), product.getImageUrl(), product.getCategory().getTitle());
 
     }
     @DeleteMapping("/products")
