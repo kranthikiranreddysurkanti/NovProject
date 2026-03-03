@@ -2,7 +2,7 @@ package com.kranthi.novprojectmodule.models;
 
 public class Product {
     private Long id;
-    private String titile;
+    private String title;
     private String description;
     private Double price;
     private String imageUrl;
@@ -11,9 +11,9 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long id, String titile, String description, Double price, String imageUrl, Category category) {
+    public Product(Long id, String title, String description, Double price, String imageUrl, Category category) {
         this.id = id;
-        this.titile = titile;
+        this.title = title;
         this.description = description;
         this.price = price;
         this.imageUrl = imageUrl;
@@ -28,12 +28,12 @@ public class Product {
         this.id = id;
     }
 
-    public String getTitile() {
-        return titile;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitile(String titile) {
-        this.titile = titile;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
