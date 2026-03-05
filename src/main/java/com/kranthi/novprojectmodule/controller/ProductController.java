@@ -4,6 +4,7 @@ import com.kranthi.novprojectmodule.Dto.ErrorDto;
 import com.kranthi.novprojectmodule.exceptions.ProductNotFoundException;
 import com.kranthi.novprojectmodule.models.Product;
 import com.kranthi.novprojectmodule.service.ProductService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ public class ProductController {
     //CRUD apis on models;
     private ProductService productservice;
 
-    public ProductController(ProductService productservice) {
+    public ProductController(@Qualifier("SelfProductService") ProductService productservice) {
         this.productservice = productservice;
     }
 
